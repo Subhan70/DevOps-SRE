@@ -249,3 +249,9 @@ wget -> used for downloading the files from internet
  eg: wget <url> 
  
 -------------------------------------
+shell scripting :
+files ends with .sh format 
+- starting the shellscript we write "#!/bin/bash" represents the bournshell 
+- shell script file is nothing, but a set of commands executed one by one in a format, instead of doing them manually 
+to execute the shellscript file we use these commands : 
+  ./<file_name>.sh or bash ./<file_name>.sh 
