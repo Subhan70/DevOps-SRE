@@ -255,3 +255,10 @@ files ends with .sh format
 - shell script file is nothing, but a set of commands executed one by one in a format, instead of doing them manually 
 to execute the shellscript file we use these commands : 
   ./<file_name>.sh or bash ./<file_name>.sh 
+
+-----------------
+
+Cron jobs: this is a schedule task, which can be executed at particular interval of time or at required time 
+ crontab -l -> displays current cronjobs 
+ crontab -e -> for editing or setting up the cron jobs 
+  eg: 0 2 * * * /home/ubuntu/backup.sh   -> cron expression <file name with complete path > 
