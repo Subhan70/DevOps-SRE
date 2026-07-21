@@ -38,7 +38,7 @@ Branching
 Remote Repository
   git remote add origin  - Connect local repo to GitHub.
   git remote -v - View remote repositories.
-  git push -u origin main - First push to GitHub.
+  git push -u origin main - push to GitHub (update the branch accordingly).
   git push - Push latest commits.
   git clone  - Download a repository.
   git fetch - Download remote changes only.
