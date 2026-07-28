@@ -1,0 +1,29 @@
+Docker : Docker is a platform used to create, run and manage the containers 
+
+1.What is virtualization
+2. What docker is solving ?
+
+#Physical Server: Is nothing but the server which we bought (Eg: Cpu 16 cores, Ram: 64GB, Storage : 1TB)
+- on top of it we install ubuntu or windows as per our requirment. [if installed O S uses 2gb, 4cores and 256gb], then remaining will be left unused 
+- we are paying the money for the complete server, and unused space which we are wasting the resource 
+- the companies don't want to waste this resource 
+--------------------------------------------------------
+##Virtualization was implemented.
+ - Lets say if we have 3 applications: DB, frontend and UI/Backend
+ - For 3 applications we buy 3 servers, then it is huge cost and also we may not use all the resources on the server.
+ -  Virtualization comes in picture, We use install the required OS on one physical server, on the left over space avaibale in server 
+
+Virtualization: is the process of creating multiple virtual computers (Virtual Machines) on a single physical server.
+                
+             Physical Server
+      CPU 16 Core | RAM 64 GB | Disk 1 TB
+                     │
+                Hypervisor
+      ┌────────┬────────┬
+      VM1      VM2      VM3
+    Ubuntu    Windows   CentOS
+    Frontend   DB       Backend
+  eg: Think of an Appartment, in this each flat has its own bedroom, watersuply, electricty, living room, Kitchen - Same as Each VM has its own RAM, CPU, Memory 
+
+-------------------------------
+Hypervysor: is the 
