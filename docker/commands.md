@@ -1,0 +1,42 @@
+Docker commands: 
+docker --version	 Check Docker version
+docker images	    List all downloaded images	
+docker ps	        Show running containers	
+docker ps -a	     Show all containers (running and stopped)	
+docker pull	      Download an image from Docker Hub	          eg: docker pull nginx
+docker run	       Create and start a container	                   docker run nginx
+docker stop	      Stop a running container	                       docker stop <container_id>
+docker start	     Start a stopped container	                      docker start <container_id>
+docker restart	   Restart a container	                            docker restart <container_id>
+docker rm	        Remove a container	                             docker rm <container_id>
+docker rmi	       Remove an image	                                docker rmi nginx
+docker exec	      Run a command inside a running container	       docker exec -it nginx bash
+docker logs	       View container logs	                           docker logs nginx
+docker inspect	    Show detailed container or image information	  docker inspect nginx
+docker build	      Build an image from a Dockerfile	              docker build -t myapp .
+docker tag	        Tag an image	                                  docker tag myapp:v1 myrepo/myapp:v1
+docker push	       Upload an image to a registry	                 docker push myrepo/myapp:v1
+docker pull	       Download an image from a registry	             docker pull myrepo/myapp:v1
+docker network ls	  List Docker networks	
+docker volume ls	   List Docker volumes	
+docker system prune	Remove unused Docker resources
+
+------------------------
+For docker push (for pushing the image to central repo eg: docker hub, Amazon repo or Azure)
+-> first we need to tag the image with the repository where we need to push it 
+$ docker images
+REPOSITORY        TAG       IMAGE ID       CREATED      SIZE
+first-image       v1        de77fe1aa022   3 days ago   232MB
+jenkins/jenkins   lts       8547df3b0db2   6 days ago   801MB
+
+
+here we need to add to our repo first, 
+docker tag <image-name> <repositoryname>:<tag> 
+eg: docker fisrt-image subhanrider/sre:v1 
+
+then we can push the image to central repo : docker push subhanrider/test:v1
+
+------------------------
+docker run --network="host" <image_name>
+docker run -it -v <volume_name>:/data <image_name> /bin/bash
+docker run -it -v <host_path>:<container_path> <image_name> /bin/bash
