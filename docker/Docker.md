@@ -34,33 +34,8 @@ Docker : A platform for building, shipping, and running applications in containe
 Docker Image: A Docker Image is a lightweight, standalone and executable software package that includes everything needed to run an application: the code, a runtime, system tools, libraries and settings.
  - A read-only blueprint that contains everything needed to run an application.
 Docker Container: A running instance of an Docker image
-
------------------------------------
-Docker commands: 
-docker --version	 Check Docker version
-docker images	    List all downloaded images	
-docker ps	        Show running containers	
-docker ps -a	     Show all containers (running and stopped)	
-docker pull	      Download an image from Docker Hub	          eg: docker pull nginx
-docker run	       Create and start a container	                   docker run nginx
-docker stop	      Stop a running container	                       docker stop <container_id>
-docker start	     Start a stopped container	                      docker start <container_id>
-docker restart	   Restart a container	                            docker restart <container_id>
-docker rm	        Remove a container	                             docker rm <container_id>
-docker rmi	       Remove an image	                                docker rmi nginx
-docker exec	      Run a command inside a running container	       docker exec -it nginx bash
-docker logs	       View container logs	                           docker logs nginx
-docker inspect	    Show detailed container or image information	  docker inspect nginx
-docker build	      Build an image from a Dockerfile	              docker build -t myapp .
-docker tag	        Tag an image	                                  docker tag myapp:v1 myrepo/myapp:v1
-docker push	       Upload an image to a registry	                 docker push myrepo/myapp:v1
-docker pull	       Download an image from a registry	             docker pull myrepo/myapp:v1
-docker network ls	  List Docker networks	
-docker volume ls	   List Docker volumes	
-docker system prune	Remove unused Docker resources
-
 ------------------------
-Docker Networking
+**Docker Networking**
 Networking allows containers to communicate with each other and with the host system. Containers run isolated from the host system and need a way to communicate with each other and with the host system.
 
 By default, Docker provides two network drivers for you, the bridge and the overlay drivers.
@@ -92,7 +67,7 @@ This way, you can run multiple containers on a single host platform where one co
  docker network connect my_bridge web
 
 ----------------
-Host Networking : 
+**Host Networking** : 
 This mode allows containers to share the host system's network stack, providing direct access to the host system's network.
 
 To attach a host network to a Docker container, you can use the --network="host" option when running a docker run command. When you use this option, the container has access to the host's network stack, and shares the host's network namespace. This means that the container will use the same IP address and network configuration as the host.
@@ -104,11 +79,11 @@ docker run --network="host" <image_name> <command>
 Keep in mind that when we use the host network, the container is less isolated from the host system, and has access to all of the host's network resources. This can be a security risk, so use the host network with caution.
 
 -------------------------
-Overlay Networking
+**Overlay Networking**
 This mode enables communication between containers across multiple Docker host machines, allowing containers to be connected to a single network even when they are running on different hosts.
 
 -----------------
-Docker Volumes : containers will get destroyed sometimes, when they got crashed at that point, if we stored our data on the container, then it is difficult to bring the data back, so to overcome this we have a solution called volumes 
+**Docker Volumes** : containers will get destroyed sometimes, when they got crashed at that point, if we stored our data on the container, then it is difficult to bring the data back, so to overcome this we have a solution called volumes 
 
 There are 2 different ways how docker solves this problem.
 1. Volumes
